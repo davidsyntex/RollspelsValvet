@@ -23,6 +23,11 @@ namespace RollspelsValvet
         public MainWindow()
         {
             InitializeComponent();
+            var currency = CurrencyFactory.BuildCurrency(CurrencyFactory.Type.FourteenthAge);
+
+            currency.Add(12345);
+            Console.WriteLine(currency.Format());
+
         }
     }
 }
