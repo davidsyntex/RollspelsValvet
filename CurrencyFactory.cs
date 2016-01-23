@@ -10,14 +10,14 @@ namespace RollspelsValvet
             ShadowChronicle
         }
 
-        public static ICurrency BuildCurrency(Type currencyType)
+        public static ICurrency Build(Type currencyType)
         {
             ICurrency currency = null;
 
             switch (currencyType)
             {
                 case Type.FourteenthAge:
-                    currency = new CurrencyFourteenthAge("14th Age");
+                    currency = new CurrencyFourteenthAge();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(currencyType), currencyType, null);

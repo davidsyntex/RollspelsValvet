@@ -4,32 +4,20 @@ namespace RollspelsValvet
 {
     public class CurrencyFourteenthAge : ICurrency
     {
-        public CurrencyFourteenthAge(string name)
+        public CurrencyFourteenthAge()
         {
-            Name = name;
-            Amount = 0;
+            Name = "14th Age";
         }
 
         public string Name { get; }
-        public int Amount { get; private set; }
 
-        public void Add(int amount)
+        public static string Format(int amount)
         {
-            Amount += amount;
-        }
+            var tempAmount = amount;
 
-        public void Subtract(int amount)
-        {
-            Amount -= amount;
-        }
-
-        public string Format()
-        {
-            var tempAmount = Amount;
-
-            var guldmynt = tempAmount / 100;
+            var guldmynt = ConvertToGoldRoundedDown(tempAmount);
             tempAmount = tempAmount % 100;
-            var silvermynt = tempAmount / 10;
+            var silvermynt = ConvertToSilverRoundedDown(tempAmount);
             tempAmount = tempAmount % 10;
             var kopparmynt = tempAmount;
 
@@ -59,6 +47,25 @@ namespace RollspelsValvet
             }
 
             return stringBuilder.ToString();
+        }
+
+        public static double ConvertToSilver(int copperCoin)
+        {
+            return copperCoin / 10.0;
+        }
+
+        public static double ConvertToGold(int copperCoin)
+        {
+            return copperCoin / 100.0;
+        }
+        public static int ConvertToSilverRoundedDown(int copperCoin)
+        {
+            return copperCoin / 10;
+        }
+
+        public static int ConvertToGoldRoundedDown(int copperCoin)
+        {
+            return copperCoin / 100;
         }
     }
 }

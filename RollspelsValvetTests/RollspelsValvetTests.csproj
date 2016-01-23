@@ -6,8 +6,8 @@
     <ProjectGuid>{51B6C1FE-11F7-41A0-B7E5-6BCDEBBDA34C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RollspelsValvetTests1</RootNamespace>
-    <AssemblyName>RollspelsValvetTests1</AssemblyName>
+    <RootNamespace>RollspelsValvetTests</RootNamespace>
+    <AssemblyName>RollspelsValvetTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,6 +51,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AccountFactoryTests.cs" />
+    <Compile Include="AccountTests.cs" />
     <Compile Include="CurrencyFactoryTests.cs" />
     <Compile Include="CurrencyFourteenthAgeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
